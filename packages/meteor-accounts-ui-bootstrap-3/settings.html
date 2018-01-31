@@ -1,0 +1,228 @@
+<!-- template: settings page -->
+
+<template name="settings">       
+   <div class="row rowpadding">
+        <span class="info-big">&nbsp; &nbsp;Settings</span>
+   </div>
+  <div class="row rowpadding">
+    {{#with userData}}
+    <div class="row rowpadding">
+      <div class="col-md-3">
+          <br><br><span class="info-big" style="font-size: 1.1em;">Membership</span>
+           <br>&nbsp;
+
+         <div class="form-group">
+           <label for="email">Your account is active until:</label>
+           <input type="text" class="form-control" readonly id="membership" value="{{membershipInfo}}" style="display: inline-block; width: 63%;">
+           <button class="btn btn-primary buyMembership" style="display: inline-block;">Extend membership</button>
+         </div>
+      </div>
+    </div>
+    <div class="row rowpadding">
+
+       <div class=" {{#if hasType}} row col-sm-6 {{else}} row col-sm-12 {{/if}}">
+          <p>Below you can update your account info or manage your password.</p>      
+       </div>	
+        
+       <div class="col-md-6">
+         <div class="form-group">
+           <label for="name">Name:</label>
+           <input type="text" class="form-control" id="name" value="{{profile.name}}" placeholder="Your name">
+         </div>
+         
+         <div class="form-group">
+           <label for="email">Email*:</label>
+           <input type="text" class="form-control" id="email" value="{{profile.email}}" placeholder="Email">
+         </div>
+
+         <div class="form-group">
+           <label for="avatar">Company name:</label>
+           <input type="text" class="form-control" id="companyName" placeholder="Company name" value="{{profile.companyName}}">
+         </div>
+         <div class="form-group">
+           <label for="avatar">USPS User ID*:</label>
+           <input type="text" class="form-control" id="uspsuid" placeholder="USPS User ID" value="{{profile.uspsuid}}">
+           <div class="taxInfo">You can get a USPS User ID here: <a href="https://registration.shippingapis.com">registration.shippingapis.com</a></div>
+         </div>
+         <div class="form-group">
+           <label for="avatar">Teapplix account name:</label>
+           <input type="text" class="form-control" id="teapplixName" placeholder="Teapplix account name" value="{{profile.teapplixName}}">
+         </div>
+         <div class="form-group">
+           <label for="avatar">Teapplix user (e-mail):</label>
+           <input type="text" class="form-control" id="teapplixUser" placeholder="Teapplix user" value="{{profile.teapplixUser}}">
+         </div>
+         <div class="form-group">
+           <label for="avatar">Teapplix password:</label>
+           <input type="password" class="form-control" id="teapplixPass" placeholder="Teapplix password" value="{{profile.teapplixPass}}">
+         </div>
+         <br/>
+
+         <div class="form-group">
+           <button type="button" class="btn btn-primary updateAccount">Update your account info</button>
+         </div>
+
+         <br><br><span class="info-big" style="font-size: 1.1em;">Your API Key</span>
+         <br>&nbsp;
+
+         <div class="form-group">
+           <input type="text" class="form-control" readonly value="{{profile.apiKey}}">
+           {{#if notHasAPIKey}} <button class="btn btn-info generateAPIKey"> Get API Key</button> {{/if}}
+         </div>
+
+         
+         <br><br><span class="info-big" style="font-size: 1.1em;">Change your password</span>
+         <br>&nbsp;
+         <div class="form-group">
+           <label for="name">Current password:</label>
+           <input type="password" class="form-control" id="oldPassword" placeholder="Current password">
+         </div>
+         
+         <div class="form-group">
+           <label for="email">New password:</label>
+           <input type="password" class="form-control" id="newPassword" placeholder="New password">
+         </div>
+         
+         <div class="form-group">
+           <label for="email">New password:</label>
+           <input type="password" class="form-control" id="newPasswordAgain" placeholder="New password again">
+         </div>
+           
+         <div class="form-group">
+           <button type="button" class="btn btn-primary changePassword">Change password</button>
+         </div>
+
+         <br><br><span class="info-big" style="font-size: 1.1em;">Disable your account</span>
+         <br>&nbsp;
+
+         <div class="form-group">
+           <label for="deletePassword">Password:</label>
+           <input type="password" class="form-control" id="deletePassword" placeholder="Password">
+         </div>
+         <div class="form-group">
+           <button type="button" class="btn btn-primary disableAccount">Disable account</button>
+         </div>
+         
+       </div>
+       {{#if hasType}}
+       <div class="col-md-6">
+         &nbsp;
+         {{#each workHistArray}}
+
+            <div class="workHistElem">{{this}}</div>
+         {{/each}}
+       </div>
+       {{/if}}  
+    </div>
+    {{/with}} 
+  </div>
+</template>
+
+<template name="membershipList">
+  <div class="modal">
+    <div class="membershipHolder">
+      {{#if hasSelectedMembership}}
+        <table class="selectedMembInfo">
+          <tr>
+            <td>Membership time:</td>
+            <td>{{membTime}}</td>
+          </tr>
+
+          <tr>
+            <td>Name on credit card:</td>
+            <td><input type="text" id="credit_name" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Name on credit card:</td>
+            <td><input type="text" id="cardnumber" class="form-control" placeholder="XXXXXXXXXXXXXXXX"></td>
+          </tr>
+          <tr>
+            <td>Credit card type:</td>
+            <td>
+              <select id="type" class="form-control">
+                <option value="visa">Visa</option>
+                <option value="mastercard">Mastercard</option>
+                <option value="discover">Discover</option>
+                <option value="amex">Amex</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>CVV:</td>
+            <td><input type="text" id="cvv" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Expire month:</td>
+            <td>
+              <select id="expire_month" class="form-control">
+                <option value="1">01 - Jan</option>
+                <option value="2">02 - Feb</option>
+                <option value="3">03 - Mar</option>
+                <option value="4">04 - Apr</option>
+                <option value="5">05 - May</option>
+                <option value="6">06 - Jun</option>
+                <option value="7">07 - Jul</option>
+                <option value="8">08 - Aug</option>
+                <option value="9">09 - Sept</option>
+                <option value="10">10 - Oct</option>
+                <option value="11">11 - Nov</option>
+                <option value="12">12 - Dec</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Expire year:</td>
+            <td>
+              <select id="expire_year" class="form-control">
+                {{#each expireYears}}
+                  <option value="{{this}}">{{this}}</option>
+                {{/each}}
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td align="right" colspan="2">
+              <button class="btn btn-info cancelAdd">Cancel</button>
+              <button class="btn btn-primary payMembership">Buy</button>
+              <div class="processingPaymentText">Please wait... Processing payment</div>
+            </td>
+          </tr>
+        </table>
+      {{else}}
+        <div class="membershipBlock buy1month">
+          <div class="membershipTime">
+            1
+          </div>
+          <div class="membershipTimeDesc">
+            month
+          </div>
+          <div class="membershipPrice">
+            $10
+          </div>
+        </div>
+        <div class="membershipBlock buy3month">
+          <div class="membershipTime">
+            3
+          </div>
+          <div class="membershipTimeDesc">
+            months
+          </div>
+          <div class="membershipPrice">
+            $30
+          </div>
+        </div>
+        <div class="membershipBlock buy12month">
+          <div class="membershipTime">
+            12
+          </div>
+          <div class="membershipTimeDesc">
+            months
+          </div>
+          <div class="membershipPrice">
+            $120
+          </div>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</template>

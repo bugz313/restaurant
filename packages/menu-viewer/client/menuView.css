@@ -1,0 +1,280 @@
+.categoryDiv
+{
+	width: 100%;
+    height: 150px;
+    font-size: 64px;
+    padding: 0px;
+    background-color: white;
+    text-align: center;
+    margin-bottom: 1px;
+    color: black;
+    padding-top: 23px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 3px solid #86B57B;
+    vertical-align: middle;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.reclama
+{
+	text-align: center;
+    font-size: 2.5vw;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    border: 3px solid #86B57B;
+    padding: 10px;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 150px;
+}
+
+.bkBtnDiv
+{
+	float:left;
+}
+
+.reclamaBerger
+{
+	width:100%;
+	font-size:30px;
+	margin-top:20px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.emptyMessage
+{
+	font-size: 80px;
+    color: #ccc;
+    margin: auto;
+    margin-top: 200px;
+    font-weight: bold;
+    width: 400px;
+    text-align: center;
+}
+
+.produsDiv, .produsDivList
+{
+	width:100%;
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.produsDiv:active
+{
+	background-color: rgba(134,181,123,0.5);
+}
+
+.categoryTitleProduse
+{
+	width: 100%;
+    font-size: 75px;
+    margin-top: 200px;
+    text-align: center;
+    background-color: #86B57B;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.priceInfoDiv
+{
+	border-bottom:2px solid #86B57B;
+}
+
+.produsNume
+{
+	font-size:50px;
+	float:left;
+	width:75%;
+	padding-left: 10px;
+	padding-bottom:10px;
+	border-right:2px solid #86B57B;
+	padding-top:5px;
+	border-left:2px solid #86B57B;
+	height: 100%;
+	font-weight: bold;
+}
+
+.pretTitle
+{
+	border-bottom:2px solid #86B57B;
+}
+
+.descCant
+{
+	border-bottom:4px solid #86B57B;
+}
+
+.produsPret
+{
+	font-size:50px;
+	float:left;
+	width:25%;
+	padding-left: 10px;
+	padding-bottom:10px;
+	padding-top:5px;
+	text-align: center;
+	height: 100%;
+	font-weight: bold;
+}
+
+.produsDescriere
+{
+	font-size:30px;
+	float:left;
+	width:75%;
+	padding-left: 10px;
+	border-right:2px solid #86B57B;
+	padding-bottom:10px;
+	padding-top:5px;
+	min-height:160px;
+}
+
+.produsCantitate
+{
+	font-size:30px;
+	float:left;
+	width:25%;
+	padding-left: 10px;
+	padding-top:5px;
+	padding-bottom:10px;
+	text-align: center;
+	min-height:160px;
+	padding-top:60px;
+}
+
+.backBtn
+{
+	position:fixed;
+	top:20px;
+	left:20px;
+    height: 115px;
+    width: 180px;
+	background-color:#86B57B;
+	border-radius: 120px;
+	text-align: center;
+	color:white;
+	font-size:70px;
+}
+
+.spacerProduse
+{
+	width:100%;
+	border-bottom:4px solid #86B57B;
+}
+
+.bottomMenu
+{
+	position:fixed;
+	bottom:0px;
+	width:100%;
+	height:135px;
+	text-align: center;
+	background-color: white;
+}
+
+.dummyDiv
+{
+	margin-top:300px;
+	height:135px;
+}
+
+.bottomButton
+{
+	height: 135px;
+	width:33%;
+	font-size:60px;
+	color:white;
+	float:left;
+	margin-right: 0.5%;
+	padding-top:20px;
+
+}
+
+.rightAligned
+{
+	float:right;
+}
+
+.priceHolder
+{
+	font-size:50px;
+	float:left;
+	width:75%;
+	padding-left: 10px;
+	padding-bottom:5px;
+	padding-top:5px;
+	text-align: center;
+	height: 100%;
+	font-weight: bold;
+}
+
+.priceTotal
+{
+	font-size:50px;
+	float:right;
+	width:25%;
+	padding-left: 10px;
+	padding-bottom:10px;
+	padding-top:5px;
+	padding-right:5px;
+	text-align: center;
+	height: 100%;
+	font-weight: bold;
+}
+
+.buttonsHolder
+{
+	width:100%;
+	border-bottom:4px solid #86B57B;
+	padding-bottom:40px;
+}
+
+.buttonsHolder > .btn-group
+{
+	width:100%;
+}
+
+.buttonsHolder > .btn-group > button
+{
+	height:70px;
+	width:33.33%;
+	font-size:40px;
+}
+
+.prodNameList
+{
+	font-size:50px;
+	float:left;
+	width:100%;
+	padding-left: 10px;
+	padding-bottom:10px;
+	padding-top:5px;
+	height: 100%;
+	font-weight: bold;
+}
+
+.totalSumHolder
+{
+	font-size:50px;
+	text-align: right;
+	padding-top: 30px;
+	border-top: 1px solid black;
+}
+
+.clearTableButtonHolder
+{
+	width:100%;
+	text-align: center;
+	padding-top:20px;
+}
+
+.clearTableButtonHolder > button
+{
+	width:50%;
+	font-size:50px;
+}

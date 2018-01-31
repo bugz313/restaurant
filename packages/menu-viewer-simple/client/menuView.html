@@ -1,0 +1,35 @@
+<template name="menuViewSimple">
+	{{#if viewingCategories}}
+		{{#each categories}}
+			<div class="categoryDiv" id="{{_id}}">{{name}}</div>
+		{{/each}}
+	{{/if}}
+
+	{{#if viewingProducts}}
+		<div class="bkBtnDiv"><button class="btn btn-success backBtn"><span class="fa fa-arrow-left"></span></button></div>
+		<div class="reclama">
+			Reclama ta aici!<br>
+			Contact: office@bergersolutions.ro
+		</div>
+		<div class="categoryTitleProduse">{{currentCategoryName}}</div>
+		<div class="spacerProduse"></div>
+		{{#each produse}}
+			<div class="produsDiv" id="prod{{_id}}">
+				<div class="pretTitle">
+					<div class="produsNume">{{name}}</div>
+					<div class="produsPret">{{price}} RON</div>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="descCant">
+					<div class="produsDescriere">&nbsp; {{description}}</div>
+					<div class="produsCantitate">&nbsp; {{quantity}}</div>
+					<div style="clear:both;"></div>
+				</div>
+			</div>
+		{{/each}}
+		<div class="reclamaBerger">Aplicație dezvoltată de BERGER Solutions<br> <a href="http://www.bergersolutions.ro" target="_blank">www.bergersolutions.ro</a></div>
+	{{/if}}
+
+	
+	<div class="dummyDiv"></div>
+</template>

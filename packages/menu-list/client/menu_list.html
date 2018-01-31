@@ -1,0 +1,35 @@
+<template name="menuList">
+	<div class="row">
+		<div class="row col-sm-1">
+			
+		</div>
+		<div class="row col-sm-10">
+
+			<table class="restListTable">
+				<tr class="restListHead">
+					<td>ID Meniu</td>
+					<td>Restaurant</td>
+					<td align="center">Produse</td>
+					<td align="center">Categorii</td>
+					<td  align="center">ID Restaurant</td>
+					<td align="center"></td>
+					<td align="center"></td>
+				</tr>
+					{{#each menus}}
+						<tr class="restListRow">
+							<td>{{_id}}</td>
+							<td>{{restaurantName}}</td>
+							<td align="center">{{productCount}}</td>
+							<td align="center">{{categoryCount}}</td>
+							<td align="center">{{restaurantId}}</td>
+							<td align="center"><button class="btn btn-xs btn-primary editMenu" id="men{{_id}}"><span class="fa fa-pencil"></span></button></td>
+							<td align="center"><button class="btn btn-xs btn-primary addProd" id="prod{{_id}}"><span class="fa fa-plus"></span></button></td>
+						</tr>
+					{{/each}}
+			</table>
+		</div>
+		<div class="row col-sm-1">
+			
+		</div>
+	</div>
+</template>

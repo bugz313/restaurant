@@ -1,0 +1,125 @@
+<!-- template to display a welcome message -->
+
+<template name="welcome">    
+   	<div class="row mainPrezContainer">
+   		<div class="row col-sm-12">
+            {{#if loggedIn}}
+               
+            {{else}}
+               
+            	<div class="prezHolder">
+            		<div class="titleBox">
+            			instaMenu
+            		</div>
+            		<br><br>
+            		<div class="mainTextPrez">
+            			<span class="titleSmall">instaMenu</span> este o aplicație creată cu gândul la clienții restaurantelor și a cafenelelor, ținând cont totodată să ușureze și să scurteze timpul de predare și preluare a comenzilor.<br><br>
+						Cu <span class="titleSmall">instaMenu</span> clienții localului pot accesa meniul instant pe telefon doar prin scanarea unui cod QR plasat pe fiecare masă, iar personalul poate urmări in timp real starea comenzii și toate modificările acesteia.
+            		</div>
+
+            		<div class="subtitle">
+            			Interfața restaurantului:
+            		</div>
+
+            		<div class="descriptiveText">
+            			<div class="textImg">
+            				<img src="http://bergersolutions.ro/instamenu/comanda_part.jpg">
+            			</div>
+            			<div class="textDesc">
+            				-comanda detaliată este vizibilă întotdeauna, separat pentru fiecare masă
+            			</div>
+            		</div>
+
+            		<div class="descriptiveText">
+            			<div class="textImg">
+            				<img src="http://bergersolutions.ro/instamenu/notification_part.jpg">
+            			</div>
+            			<div class="textDesc">
+            				-orice modificare cu privire la comandă este anunțată in timp real, astfel puteți observa adăugarea ulterioară a produselor
+            			</div>
+            		</div>
+
+            		<div class="descriptiveText">
+            			<div class="textImg">
+            				<img src="http://bergersolutions.ro/instamenu/meseunite_part.jpg" style="max-width:100%;">
+            			</div>
+            			<div class="textDesc" style="width:100%; text-align:center; margin-top:20px;">
+            				-mesele pot fi grupate după preferințele localului
+            			</div>
+            		</div>
+
+            		<div class="descriptiveText">
+            			<div class="textImg">
+            				<img src="http://bergersolutions.ro/instamenu/categorii_part.jpg" style="max-width:100%;">
+            			</div>
+            			<div class="textDesc" style="width:100%; text-align:center; margin-top:20px;">
+            				-fiecare produs aparține unei categorii. Acestea, pot fi adăugate, șterse și modificate direct din interfata localului
+            			</div>
+            		</div>
+
+            		<div class="descriptiveText">
+            			<div class="textImg">
+            				<img src="http://bergersolutions.ro/instamenu/produse_part.jpg" style="max-width:100%;">
+            			</div>
+            			<div class="textDesc" style="width:100%; text-align:center; margin-top:20px;">
+            				-produsele dintr-o categorie pot fi de asemenea șterse și modificate sau se pot adăuga noi produse cu ușurință
+            			</div>
+            		</div>
+
+            		<div class="descriptiveText">
+            			<div class="textImg">
+            				<img src="http://bergersolutions.ro/instamenu/add_prod_part.jpg" style="width: 49%;">
+            			</div>
+            			<div class="textDesc">
+            				-fiecare produs conține detaliile necesare care pot fi completate cu ușurință sau modificate ulterior
+            			</div>
+            		</div>
+
+            		<div class="subtitle">
+            			Interfața clientului:
+            		</div>
+
+            		<div class="descriptiveText">
+            			<div class="textImg">
+            				<img src="http://bergersolutions.ro/instamenu/1.jpg" style="max-width:25%; margin-left:30px;">
+            				<img src="http://bergersolutions.ro/instamenu/2.jpg" style="max-width:25%; margin-left:30px;">
+            				<img src="http://bergersolutions.ro/instamenu/3.jpg" style="max-width:25%; margin-left:30px;">
+            			</div>
+            			<div class="textDesc" style="width:100%; text-align:center; margin-top:20px;">
+            				-clienții pot vedea meniul complet, împărțit pe categorii, cu toate detaliile importante, iar cu un singur click produsul va fi adăugat comenzii
+            			</div>
+            		</div>
+
+            		<div class="descriptiveText">
+            			<div class="textImg">
+            				<img src="http://bergersolutions.ro/instamenu/4.jpg" style="max-width:25%; margin-left:30px;">
+            				<img src="http://bergersolutions.ro/instamenu/5.jpg" style="max-width:25%; margin-left:30px;">
+            				<img src="http://bergersolutions.ro/instamenu/6.jpg" style="max-width:25%; margin-left:30px;">
+            			</div>
+            			<div class="textDesc" style="width:100%; text-align:center; margin-top:20px;">
+            				-clienții pot avea separat lista lor personală cu produsele alese, iar cantitatea acestora poate fi modificată<br><br>
+							-comenzile care provin de la aceeași masă dar de la clienți diferiți sunt unite pe interfața restaurantului
+
+            			</div>
+            		</div>
+
+            		<div class="descriptiveText">
+            			<div class="textImg">
+            				<img src="http://bergersolutions.ro/instamenu/all_comanda.jpg" style="max-width:100%;">
+            			</div>
+            			<div class="textDesc" style="width:100%; text-align:center; margin-top:20px;">
+            				-orice modificare făcută la comandă este vizibilă restaurantului, astfel timpul de așteptare este micșorat
+            			</div>
+            		</div>
+
+            		<br><br>
+
+            		<div class="mainTextPrez">
+						Vă invităm să folosiți GRATUIT aplicația <span class="titleSmall">instaMenu</span> pentru o inovație în localul dumneavoastră și să vă convingeți de beneficiile oferite de acesta. Pentru a vă înregistra localul ajunge doar să dați un telefon la numărul: 0741090548 sau un e-mail la: office@bergersolutions.ro și de restul ne ocupăm noi! 
+            		</div>
+            		
+               	</div>
+            {{/if}}
+   		</div>
+   	</div>
+</template>

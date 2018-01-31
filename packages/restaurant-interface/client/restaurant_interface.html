@@ -1,0 +1,165 @@
+<template name="restaurantInterface">
+	<div class="row">
+		<div class="row col-sm-1">
+		</div>
+		<div class="row col-sm-10">
+			<br><br><br>
+			{{#if loggedIn}}
+			<div class="restInterfaceCont">
+				<ul class="nav nav-tabs">
+	          		<li id='tabmese' class="produseTab {{isActiveTab 'mese'}}"><a data-toggle="tab" href="#mese">Mese</a></li>
+	          		<li id='tabproduse' class="produseTab {{isActiveTab 'produse'}}"><a data-toggle="tab" href="#produse">Produse</a></li>
+	          		<li id='tabcategorii' class="categoriiTab {{isActiveTab 'categorii'}}"><a data-toggle="tab" href="#categorii">Categorii</a></li>
+		        </ul>
+		        <div class="tab-content">
+					<div class="tab-pane fade in {{isActiveTab 'mese'}}" id="mese">
+						<br>
+							<button class="btn btn-success addTable"><span class="fa fa-plus"></span>&nbsp;Adaugă masă</button>
+							<button class="btn btn-primary joinTables">Unește mese</button>
+							<button class="btn btn-success finishJoin">Terminare</button>
+							<button class="btn btn-danger cancelJoin">Anulează</button>
+
+						<table class="meseTable">
+							<tr class="meseHead">
+								<td width="15%">Masă</td>
+								<td>Produse</td>
+								<td width="30%"></td>
+								<td width="10%">Total</td>
+								<td width="5%"></td>
+								<td width="3%"></td>
+								<td width="3%"></td>
+							</tr>
+							{{#each tables}}
+								<tr class="meseRow" id="table{{_id}}" style="{{groupColor}} {{imSelected}}">
+									<td>
+										{{name}}
+										{{#if hasTableNotif}}
+											<i class="fa fa-bell" aria-hidden="true" style="font-size: 18px; margin-left: 4px;"></i>
+										{{/if}}
+									</td>
+									<td>
+										
+										{{#if hasListProds}}
+										<div class="showListBtns">
+											<button class="btn btn-sm btn-primary showList" id="s{{_id}}">Arată</button>
+											<button class="btn btn-sm btn-primary hideList" id="h{{_id}}">Ascunde</button>
+										</div>	
+										<div class="productListContainer" id="p{{_id}}">
+											{{#each orderList}}
+												{{quantityList}} X {{productName}}<br>
+											{{/each}}
+										</div>
+										{{else}}
+											Lista goală
+										{{/if}}
+									</td>
+									<td>
+										{{#if isJoined}}
+											<!--<span class="unitedClass">Unita cu: {{joinedDesc}}</span>-->
+											<button class="btn btn-xs btn-danger detachTable" id="det{{_id}}">Detașare</button> 
+										{{/if}}
+									</td>
+									<td>{{totalAmount}} RON</td>
+									<td>
+										{{#if hasListProds}}
+											<button class="btn btn-sm btn-danger clearList" id="tab{{_id}}">Achitat</button>
+										{{/if}}
+									</td>
+									<td width="3%" align="center">
+										<button class="btn btn-xs btn-primary editTable" id="{{_id}}" title="Editează masa">
+											<span class="fa fa-pencil"></span>
+										</button>
+									</td>	
+									<td width="3%" align="center">
+										<button class="btn btn-xs btn-danger delTable" id="del{{_id}}" title="Șterge masa">
+											<span class="fa fa-trash"></span>
+										</button>
+									</td>
+								</tr>
+							{{/each}}
+						</table>
+					</div>
+					<div class="tab-pane fade in {{isActiveTab 'produse'}}" id="produse">
+						<br>
+							<button class="btn btn-success addProd"><span class="fa fa-plus"></span>&nbsp;Adaugă produs</button>
+
+						<br>
+						<select id="categories" class="form-control" style="height:40px; font-size:19px;">
+							{{#each categoryList}}
+								<option value="{{_id}}">{{name}}</option>
+							{{/each}}
+						</select>
+						<br>
+						<br>
+
+						<table class="meseTable">
+							<tr class="meseHead">
+								<td width="2%"></td>
+								<td width="2%"></td>
+								<td width="20%">Denumire</td>
+								<td width="50%">Descriere</td>
+								<td width="10%" align="center">Cantitate</td>
+								<td width="7%" align="center">Preț</td>
+								<td width="3%" align="center"></td>
+								<td width="3%" align="center"></td>
+							</tr>
+							{{#each productsList}}
+								<tr class="meseRow">
+									<td align="center">
+										<button class="btn btn-primary btn-xs downProd" id="down{{_id}}"><span class="fa fa-arrow-down"></span></button>
+									</td>
+									<td align="center">
+										<button class="btn btn-primary btn-xs upProd" id="up{{_id}}"><span class="fa fa-arrow-up"></span></button>
+									</td>
+									<td>{{name}}</td>
+									<td>{{description}}</td>
+									<td align="center">{{quantity}}</td>
+									<td align="center">{{price}}</td>
+									<td width="3%" align="center"><button class="btn btn-xs btn-primary editProd" id="{{_id}}" title="Editează produs"><span class="fa fa-pencil"></span></button></td>	
+									<td width="3%" align="center"><button class="btn btn-xs btn-danger delProd" id="del{{_id}}" title="Șterge produs"><span class="fa fa-trash"></span></button></td>
+								</tr>
+							{{/each}}
+						</table>
+					</div>
+					<div class="tab-pane fade in {{isActiveTab 'categorii'}}" id="categorii">
+						<br>
+						<button class="btn btn-primary addCat">Adaugă categorie</button>
+
+						<table class="meseTable">
+							<tr class="meseHead">
+								<td width="2%"></td>
+								<td width="2%"></td>
+								<td>Denumire</td>
+								<td>Produse</td>
+								<td width="3%"></td>
+								<td width="3%"></td>
+							</tr>
+							{{#each categoryList}}
+								<tr class="meseRow">
+									<td align="center">
+										<button class="btn btn-primary btn-xs downCat" id="down{{_id}}"><span class="fa fa-arrow-down"></span></button>
+									</td>
+									<td align="center">
+										<button class="btn btn-primary btn-xs upCat" id="up{{_id}}"><span class="fa fa-arrow-up"></span></button>
+									</td>
+									<td>{{name}}</td>
+									<td>{{productCount}}</td>
+									<td width="3%"><button class="btn btn-xs btn-primary editCat" id="{{_id}}" title="Editează categorie"><span class="fa fa-pencil"></span></button></td>	
+									<td width="3%"><button class="btn btn-xs btn-danger delCat" id="del{{_id}}" title="Șterge categorie"><span class="fa fa-trash"></span></button></td>
+								</tr>
+							{{/each}}
+						</table>
+					</div>
+				</div>
+			</div>
+			{{else}}
+			<div class="loginWindow">
+				<input type="password" id="rest_pass" value="" placeholder="Introduceti parola restaurantului" class="form-control">
+				<button class="btn btn-success logInBtn">Logare</button>
+			</div>
+			{{/if}}
+		</div>
+		<div class="row col-sm-1">
+		</div>
+	</div>
+</template>

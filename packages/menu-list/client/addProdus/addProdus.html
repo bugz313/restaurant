@@ -1,0 +1,46 @@
+<template name="addProdus">
+	<div class="row">
+		<div class="row col-sm-4">
+			Categoria:&nbsp;&nbsp;&nbsp;&nbsp;<select class="form-control" id="catId">
+			{{#each categoriesList}}
+				<option value="{{_id}}">{{name}}</option>
+			{{/each}}
+		</select>
+			<br>
+			Denumire:<input type="text" class="form-control" id="product_name" value="" placeholder="Denumire produs">
+			<br>
+			Pret:<input type="text" class="form-control" id="product_price" value="" placeholder="Pret produs">
+			<br>
+			Cantitate:<input type="text" class="form-control" id="product_quantity" value="" placeholder="Cantitate produs">
+			<br>
+			Descriere:<textarea class="form-control" id="descriere_produs"></textarea>
+			<br>
+			{{#if isEditing}}
+				<button class="btn btn-success cancelEdit">Anuleaza</button>
+				<button class="btn btn-success saveProd">Modifica</button>
+			{{else}}
+				<button class="btn btn-success saveProd">Salveaza</button>
+			{{/if}}
+		</div>
+		<div class="row col-sm-8">
+			<table class="produseTable">
+				<tr class="produseHead">
+					<td>Denumire</td>
+					<td>Cantitate</td>
+					<td>Pret</td>
+					<td width="5%"></td>
+					<td width="5%"></td>
+				</tr>
+				{{#each produseCat}}
+					<tr class="produseRow">
+						<td>{{name}}</td>
+						<td>{{quantity}}</td>
+						<td>{{price}}</td>
+						<td><button class="btn btn-xs btn-primary editProd" id="edit{{_id}}"><span class="fa fa-pencil"></span></button></td>
+						<td><button class="btn btn-xs btn-primary delProd" id="del{{_id}}"><span class="fa fa-trash"></span></button></td>
+					</tr>
+				{{/each}}
+			</table>
+		</div>
+	</div>
+</template>

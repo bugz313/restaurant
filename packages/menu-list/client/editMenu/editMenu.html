@@ -1,0 +1,29 @@
+<template name="editMenu">
+	<div class="row">
+		<div class="row col-sm-1">
+			
+		</div>
+		<div class="row col-sm-5">
+			Categorii:&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-sm addCategory"><span class="fa fa-plus-circle"></span></button>
+			<br>
+			<table class="catsTable">
+				{{#each menuCategories}}
+				<tr class="catsRow">
+					<td><input type="text" value="{{name}}" class="form-control editCatInput" id="newCatName{{_id}}"><div id="static{{_id}}">{{name}}</div></td>
+					<td>
+						<button class="btn btn-xs btn-primary editCat staticInput" id="edit{{_id}}"><span class="fa fa-pencil"></span></button>
+						<button class="btn btn-xs btn-primary saveCat editCatInput" id="save{{_id}}"><span class="fa fa-floppy-o"></span></button>
+						<button class="btn btn-xs btn-primary cancelEdit editCatInput" id="canc{{_id}}"><span class="fa fa-times"></span></button>
+						<button class="btn btn-xs btn-primary delCat staticInput" id="del{{_id}}"><span class="fa fa-trash"></span></button>
+					</td>
+				</tr>
+				{{/each}}
+			</table>
+			<br>
+			<button class="btn btn-success backMenus">Inapoi</button>
+		</div>
+		<div class="row col-sm-6">
+			
+		</div>
+	</div>
+</template>

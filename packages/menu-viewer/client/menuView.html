@@ -1,0 +1,95 @@
+<template name="menuView">
+	{{#if viewingCategories}}
+		{{#each categories}}
+			<div class="categoryDiv" id="{{_id}}">{{name}}</div>
+		{{/each}}
+	{{/if}}
+
+	{{#if viewingProducts}}
+		<div class="bkBtnDiv"><button class="btn btn-success backBtn"><span class="fa fa-arrow-left"></span></button></div>
+		<div class="reclama">
+			Reclama ta aici!<br>
+			Contact: office@bergersolutions.ro
+		</div>
+		<div class="categoryTitleProduse">{{currentCategoryName}}</div>
+		<div class="spacerProduse"></div>
+		{{#each produse}}
+			<div class="produsDiv" id="prod{{_id}}">
+				<div class="pretTitle">
+					<div class="produsNume">{{name}}</div>
+					<div class="produsPret">{{price}} RON</div>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="descCant">
+					<div class="produsDescriere">&nbsp; {{description}}</div>
+					<div class="produsCantitate">&nbsp; {{quantity}}</div>
+					<div style="clear:both;"></div>
+				</div>
+			</div>
+		{{/each}}
+		<div class="reclamaBerger">Aplicație dezvoltată de BERGER Solutions<br> <a href="http://www.bergersolutions.ro" target="_blank">www.bergersolutions.ro</a></div>
+	{{/if}}
+
+	{{#if viewingMyList}}
+		{{#each myListItems}}
+			<div class="produsDivList" id="prod{{_id}}">
+				<div class="pretTitle">
+					<div class="prodNameList">{{prodName}}</div>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="priceInfoDiv">
+					<div class="priceHolder">&nbsp; {{quantity}} x {{prodPrice}} RON</div>
+					<div class="priceTotal">&nbsp; {{totalPrice}} RON</div>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="buttonsHolder">
+					<div class="btn-group" role="group" aria-label="...">
+					  <button type="button" class="btn btn-info clearMyListProduct" id="del{{prod}}">Șterge</button>
+					  <button type="button" class="btn btn-danger removeProdMyList" id="dec{{prod}}"><span class="fa fa-minus"></span></button>
+					  <button type="button" class="btn btn-success addProdMyList" id="add{{prod}}"><span class="fa fa-plus"></span></button>
+					</div>
+				</div>
+			</div>
+		{{/each}}
+		{{#if hasProds}}
+		<div class="totalSumHolder">
+			Totalul tău:&nbsp;&nbsp;&nbsp;<b>{{totalMyList}} RON</b>
+		</div>
+		{{else}}
+			<div class="emptyMessage">Lista este goală</div>
+		{{/if}}
+	{{/if}}
+
+	{{#if viewingTableList}}
+		{{#each tableItemsList}}
+			<div class="produsDivList" id="prod{{_id}}">
+				<div class="pretTitleTable">
+					<div class="prodNameList">{{prodName}}</div>
+					<div style="clear:both;"></div>
+				</div>
+				<div class="priceInfoDiv">
+					<div class="priceHolder">&nbsp; {{quantity}} x {{prodPrice}}</div>
+					<div class="priceTotal">&nbsp; {{totalPrice}}</div>
+					<div style="clear:both;"></div>
+				</div>
+			</div>
+		{{/each}}
+		{{#if hasProdsTable}}
+		<div class="totalSumHolder">
+			Totalul mesei:&nbsp;&nbsp;&nbsp;<b>{{totalTable}} RON</b>
+		</div>
+		<div class="clearTableButtonHolder">
+			<button class="clearTable btn btn-danger">Golește lista</button>
+		</div>
+		{{else}}
+			<div class="emptyMessage">Lista este goală</div>
+		{{/if}}
+	{{/if}}
+
+	<div class="bottomMenu">
+		<div class="bottomButton myList" style="{{isSelected 'myList'}}">Lista mea</div>
+		<div class="bottomButton tableList" style="{{isSelected 'tableList'}}">Lista mesei</div>
+		<div class="bottomButton menu" style="margin-right:0px; {{isSelected 'categories'}}">Meniu</div>
+	</div>
+	<div class="dummyDiv"></div>
+</template>

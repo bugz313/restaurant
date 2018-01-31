@@ -1,0 +1,39 @@
+.catsTable
+{
+	width:50%;
+}
+
+.produseTable
+{
+	width:80%;
+}
+
+.catsRow, .produseRow
+{
+	border-bottom:1px solid #ccc;
+}
+
+.produseRow:hover
+{
+	background-color:rgba(0,255,0,0.2);
+}
+
+.produseHead
+{
+	font-weight: bold;
+	border-bottom:1px solid black;
+}
+
+.catsRow > td, .produseRow > td {
+	padding:10px;
+}
+
+#descriere_produs
+{
+	height:400px;
+}
+
+.editCatInput
+{
+	display:none;
+}

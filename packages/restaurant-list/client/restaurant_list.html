@@ -1,0 +1,46 @@
+<template name="restaurantList">
+	<div class="row">
+		<div class="row col-sm-1">
+			
+		</div>
+		<div class="row col-sm-10">
+			<button class="btn btn-primary createRest">Creare restaurant</button><br><br>
+
+			<table class="restListTable">
+				<tr class="restListHead">
+					<td>ID Restaurant</td>
+					<td>Nume</td>
+					<td align="center">Numar de mese</td>
+					<td align="center">Produse meniu</td>
+					<td  align="center">ID Meniu</td>
+					<td align="center">Clienti</td>
+				</tr>
+					{{#each restaurants}}
+						<tr class="restListRow">
+							<td>{{_id}}</td>
+							<td>{{name}}</td>
+							<td align="center">{{tables}}</td>
+							<td align="center">
+								{{#if hasMenu}}
+									{{productCount}}
+								{{else}}
+									0
+								{{/if}}
+							</td>
+							<td align="center">
+								{{#if hasMenu}}
+									{{menuId}}
+								{{else}}
+									<button class="btn btn-xs btn-primary createMenu" id="re{{_id}}"><span class="fa fa-plus"></span></button>
+								{{/if}}
+							</td>
+							<td align="center">{{client_count}}</td>
+						</tr>
+					{{/each}}
+			</table>
+		</div>
+		<div class="row col-sm-1">
+			
+		</div>
+	</div>
+</template>

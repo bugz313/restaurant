@@ -1,0 +1,613 @@
+html, body {
+  padding-bottom: 0px;
+  color: black;
+  height:100%;
+  width:100%;
+}
+
+.titleBox
+{
+  font-size:100px;
+  color:white;
+  text-align: center;
+  font-family: 'Peralta', cursive;
+}
+
+.titleSmall
+{
+  font-weight: bold;
+  font-family: 'Peralta', cursive;
+}
+
+.subtitle
+{
+  font-size:50px;
+  text-align: center;
+  padding-top:150px;
+  padding-bottom:40px;
+}
+
+.descriptiveText
+{
+  text-align: center;
+  background-color: rgba(255,255,255,0.2);
+  padding:20px;
+  border-radius: 15px;
+  margin-bottom: 50px;
+}
+
+.textImg
+{
+  display: inline;
+  width:49%;
+}
+
+.textImg > img
+{
+  border-radius: 15px;
+}
+
+.textDesc
+{
+  font-size: 35px;
+  display: inline-block;
+  width: 49%;
+  text-align: left;
+  padding-left: 35px;
+  vertical-align: middle;
+}
+
+.mainPrezContainer
+{
+  margin-top: 0px;
+  padding: 0px;
+  padding-left:100px;
+  padding-right:100px;
+  height: 100%;
+   background: url(http://bergersolutions.ro/instamenu/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: fixed;
+  overflow: auto;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.prezHolder
+{
+  width:100%;
+  margin: auto;
+  margin-top: 100px;
+  color:white;
+  padding: 200px;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.mainTextPrez
+{
+  font-size:35px;
+}
+
+.showCalendarsList
+{
+  margin-top:30px;
+  margin-bottom:-15px;
+  font-size:20px;
+  font-weight: bold;
+  cursor:pointer;
+  display: inline-block;
+  padding:5px;
+}
+
+.calsListHolder
+{
+  position: absolute;
+  display: block;
+  color:#666666;
+  font-size:14px;
+  background-color: white;
+  padding:10px;
+  border:1px solid #666;
+  border-radius: 5px;
+  width:400px;
+  z-index:1000;
+  display:none;
+}
+
+.calsListHolder:hover
+{
+
+}
+
+.calElem
+{
+  float:left;
+  margin-left:10px;
+}
+
+.showCalendarsList:hover
+{
+  background-color: #5f5f5f;
+  border-radius:5px;
+  color:white;
+}
+
+.openListCaret
+{
+  margin-top: 2px;
+}
+
+.dropdown-menu
+{
+  right:0;
+  left: -195px;
+}
+
+.navbar-fixed-left {
+  z-index:3000;
+  width: 250px;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+  padding:0px;
+}
+
+.navbar-fixed-left .navbar-nav > li {
+  float: none;  /* Cancel default li float: left */
+  width: 100%;
+}
+
+.navbar-fixed-left + .container {
+  padding-left: 160px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color:#4CAF50;
+}
+
+/* On using dropdown menu (To right shift popuped) */
+.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+  margin-top: -50px;
+  margin-left: 140px;
+}
+
+.message
+{
+  float:right;
+  padding-right: 15px;
+  color:white;
+  font-size:16px;
+  padding-top: 15px;
+}
+
+#mCont
+{
+  padding:70px 20px 0px 270px;
+  height:100%;
+}
+
+#iron-router-progress {
+    background-color : white;
+    box-shadow       : 0 0 5px white;
+}
+
+#mCont #styleCont
+{
+  height: 100%;
+}
+
+.listing {
+  min-height: 60px;
+}
+
+.listing, .item {
+  background: #fff;
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); 
+}
+
+table {
+  margin-top: 20px;
+}
+
+.inline {
+    display:inline;
+}
+
+#table_list {
+  font-size: 0.8em;
+}
+
+#table_list tbody tr:nth-child(odd) {
+   background-color: #f3f3f3;
+}
+
+#table_list_container{
+  clear: both;
+  display: block;
+}
+
+.logoText
+{
+  color: white;
+  height: 70px;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 30px;
+  padding-left: 30px;
+  margin-bottom:0px;
+  padding-top: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+body {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin-bottom: 0px;
+  padding-bottom:0px;
+}
+
+h1 {
+   font-family: 'Open Serif', Georgia, Times, serif;
+   font-size: 2.5em;
+   line-height: 1.2em;
+}
+ 
+p {
+   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+   font-size: 1em;
+}
+
+.welcomeMessage
+{
+  margin: auto;
+  text-align: center;
+  font-size: 45px;
+}
+
+.infoLogin
+{
+  margin: auto;
+  text-align: center;
+  font-size: 24px;
+}
+
+/* Styles for the pagination */
+.number{
+  font-size: 0.7em;
+  color: #767676;
+}
+
+/* Overwrite the Bootstrap styles for pagination*/
+.pagination.navigation > li > a, 
+.pagination.navigation > li > span {
+    color: #767676;
+}
+
+.pagination.navigation > li.active > a,
+.pagination.navigation > li.active > span {
+    background: #ddd;  
+    border: solid 1px #ddd;
+}
+
+/*
+  Bootstrap styling overwrites  
+*/
+
+.btn-primary,
+{
+  background-color: #5f5f5f !important;
+  border-color:#5f5f5f !important;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary.active
+{
+  background-color: #DC6565;
+  border-color: #DC6565;
+}
+
+.btn-xs
+{
+  border:0px;
+}
+
+@grid-gutter-width:0px;
+
+.navbar-fixed-top{
+  border-width:0 0 0px;
+  min-height: 60px;
+}
+
+.navbar-brand{
+  width:100%;
+}
+
+.navbar-collapse
+{
+  width:100%;
+  margin-top:40px!important;
+  padding: 0px;
+}
+
+.navbar-collapse > ul
+{
+  width:100%;
+  float:none;
+}
+
+.navbar-collapse > ul > li:hover
+{
+  background-color: white;
+  color:#5f5f5f;
+}
+
+.navbar-inverse {
+  background-color: #4CAF50!important;
+  border-color: #4CAF50;
+  vertical-align: middle;
+}
+
+.navbar-inverse .navbar-nav > li > a
+{
+  color:#fff;
+  font-family: 'Open Sans';
+  font-size:16px;
+}
+
+.navbar-collapse
+{
+  margin:auto;
+  padding-top:5px;
+}
+
+.info-big
+{
+  color:#181818;
+  font-size: 24px;
+  font-family: 'Open Sans';
+}
+
+.default-big
+{
+  color:#FFF;
+  font-size: 20px;
+  font-family: 'Open Sans';
+}
+
+.default-medium-disabled
+{
+  color:#595959;
+  font-size: 14px;
+  font-family: 'Open Sans';
+}
+
+.default-medium-disabled:hover
+{
+  color:#FFF;
+  font-size: 14px;
+  font-family: 'Open Sans';
+}
+
+.row{
+  margin:0px;
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+.medium-padding{
+  padding: 10 !important;
+}
+
+.big-padding{
+  padding: 20 !important;
+}
+
+.grey-input{
+  background-color: #FFFFFF;
+  font-family: 'Open Sans';
+  border:1px solid #5f5f5f;
+  color:black;
+  width:100%;
+  border-radius: 3px;
+  height:35px;
+  padding:6px;
+  -webkit-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0),
+          0 0 16px rgba(0,0,0,0); 
+  -moz-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0),
+          0 0 16px rgba(0,0,0,0); 
+  box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0),
+          0 0 16px rgba(0,0,0,0);
+}
+
+.hidden-input
+{
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
+}
+
+.default-input{
+  background-color: white;
+  border-radius: 3px;
+  color: #959595;
+  border-color: #EBEBEB;
+}
+
+.page-title
+{
+  padding-top: 40px;
+  padding-left: 60px;
+  padding-left:25px; 
+}
+
+.page-subtitle
+{
+  color:#595959;
+  font-size: 14px;
+  font-family: 'Open Sans';
+}
+
+.small-menu-item
+{
+  font-size:16px;
+  padding-right: 25px;
+}
+
+.sideBarTitle
+{
+  width:100%;
+  color:white;
+  font-size:18px;
+  text-align: center;
+  margin-top:20px;
+  margin-bottom:10px;
+  background-color: #5f5f5f
+}
+
+.sideBarItem
+{
+  padding-left: 10px;
+  color:white;
+  cursor:pointer;
+}
+
+.sideBarItem:hover
+{
+  background-color: white;
+  color:#5f5f5f;
+}
+
+.brighten
+{
+
+  font-size:22px!important;
+  border-top:1px solid white;
+  border-bottom:1px solid white;
+}
+
+.addCalendar
+{
+  float:right;
+  margin-right:10px;
+  margin-top: 5px;
+  cursor:pointer;
+}
+
+#login-username, #login-password, #login-password-again
+{
+  color:black;
+  padding:5px;
+}
+
+.btn-default
+{
+  background-color:white!important;
+}
+
+.calendarInst
+{
+  float:right;
+  margin-right:10px;
+  margin-top:3px;
+}
+
+.shareCalendar
+{
+  float:right;
+  margin-top:2px;
+  margin-right:10px;
+}
+
+.addEvent
+{
+  float:right;
+  margin-top:2px;
+  margin-right:10px;
+}
+
+.printToday
+{
+  float: right;
+  margin-top: -84px;
+}
+
+.newNotification
+{
+  float:right;
+  display:none;
+}
+
+.embedCode
+{
+  position: absolute;
+  left: 262px;
+  z-index: 3000;
+  background-color: #5f5f5f;
+  width: 334px;
+  height: 50px;
+  margin-top: -37px;
+  border-radius: 6px;
+  display:none;
+}
+
+.scheduleTips
+{
+  position: absolute;
+  left: 262px;
+  z-index: 3000;
+  background-color: #333;
+  width: 330px;
+  height: 35px;
+  margin-top: -37px;
+  border-radius: 6px;
+  color:white;
+  display:none;
+  padding:10px;
+  font-size:11px;
+}
+
+.embedCodeText, .copyButton
+{
+  float:left;
+}
+
+.embedCodeText{
+  width: 236px;
+  margin-left: 10px;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+.embedInput
+{
+  background-color: white!important;
+  vertical-align: middle;
+}
+
+.q0
+{
+  fill:#ddd!important;
+}
+
+#cal-heatmap
+{
+  width:754px;
+}
+
+.loginBtnsHolder
+{
+  float:right;
+  width:200px;
+  display: none;
+}

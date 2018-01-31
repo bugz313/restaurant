@@ -1,0 +1,33 @@
+<template name="editProdusRestaurant">
+	<div class="row">
+		<div class="row col-sm-4">
+
+		</div>
+		<div class="row col-sm-4">
+			<br><br><br>
+			<div class="restInterfaceCont">
+				{{#with produsInfo}}
+				Denumire:<input type="text" class="form-control" id="product_name" value="{{name}}" placeholder="Denumire produs">
+				<br>
+				Categorie:<select id="newProdCat" class="form-control">
+							{{#each categoryList}}
+								<option value="{{_id}}" {{isMyCateogry}}>{{name}}</option>
+							{{/each}}
+						  </select><br>
+				Pret:<input type="text" class="form-control" id="product_price" value="{{price}}" placeholder="Preț produs">
+				<br>
+				Cantitate:<input type="text" class="form-control" id="product_quantity" value="{{quantity}}" placeholder="Cantitate produs">
+				<br>
+				Descriere:<textarea class="form-control" id="descriere_produs">{{description}}</textarea>
+				<br>
+				<button class="btn btn-danger cancelEdit">Anulare</button>
+				<button class="btn btn-success saveProd">Salvare</button>
+				{{/with}}
+			</div>
+		</div>
+
+		<div class="row col-sm-4">
+
+		</div>
+	</div>
+</template>

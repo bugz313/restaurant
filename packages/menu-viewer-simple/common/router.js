@@ -1,0 +1,1 @@
+Router.route('/view-simple/:id', {name: 'menuViewSimple'});

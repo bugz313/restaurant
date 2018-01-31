@@ -1,0 +1,48 @@
+<!-- The application's template with the user interface -->
+
+<template name="layout">
+  {{#if loggedIn}}
+  <nav class="navbar navbar-inverse navbar-fixed-left">
+        <div class="navbar-brand">
+          <div class="logoText">Restaurante</div>
+        </div>
+          {{#if isInRole 'admin'}}
+            <div class="navbar-collapse collapse navbar-left">
+              <div class="sideBarItem restlist">
+                Restaurante
+              </div>
+              <div class="sideBarItem menulist">
+                Meniuri
+              </div>
+            </div>
+          {{else}}
+            <div class="navbar-collapse collapse navbar-left">
+              <div class="sideBarItem" id="{{_id}}">
+                Meniu
+              </div>
+              {{#each restTables}}
+                <div class="sideBarItem" id="{{_id}}">
+                  
+                </div>
+              {{/each}}
+            </div>
+          {{/if}}
+ </nav>
+
+  {{/if}}
+ <div class="loginBtnsHolder">
+  {{> loginButtons}}
+ </div>
+
+
+
+ {{> meteorErrors}}
+
+ {{> meteorNotifications}}
+      <div id="mCont">
+        {{> yield}}
+      </div>
+      <div class="disclaimer" style="text-align:left;">
+
+      </div>
+</template>

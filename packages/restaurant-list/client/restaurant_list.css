@@ -1,0 +1,26 @@
+.restListTable
+{
+	width:100%;
+}
+
+.restListHead
+{
+	font-weight: bold;
+	font-size:18px;
+	border-bottom:1px solid black;
+}
+
+.restListRow
+{
+	border-bottom:1px solid #ccc;
+}
+
+.restListRow > td
+{
+	padding:4px;
+}
+
+.createRest
+{
+	float:right;
+}
